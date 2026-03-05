@@ -25,18 +25,10 @@ jobs:
       # Use MSBuild to compile the entire solution, including the test projects
       run: msbuild example_unit.sln /p:Configuration=Debug /p:Platform=x64
 
-    - name: Find VSTest.console.exe path (recommended)
-      id: find_vstest
-      run: |
-        $vstest_path = Get-ChildItem -Path "C:\Program Files (x86)\Microsoft Visual Studio" -Filter "vstest.console.exe" -Recurse | Select -ExpandProperty FullName | Select-Object -First 1
-        echo "Found VSTest at: $vstest_path"
-        echo "VSTEST_PATH=$vstest_path" | Out-File -FilePath $env:GITHUB_ENV -Encoding Utf8 -Append
-      shell: powershell
-
     - name: Run C++ tests with VSTest
       # Use the path found in the previous step
       run: |
-        ${{ env.VSTEST_PATH }} x64/debug/TEST.dll /Platform:x64 /Logger:trx
+         vstest.console.exe x64/debug/TEST.dll /Platform:x64 /Logger:trx
       # The VSTest action marketplace has some issues/deprecations, so manual execution is safer
       shell: cmd
       
