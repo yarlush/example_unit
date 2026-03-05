@@ -5,6 +5,9 @@ Person::Person(std::string n, int a, Gender g) : name{ n }, age{ a }, gender{g}
 	if (name.size() > 40)
 		name.erase(name.begin() + 40, name.end());
 
+	if(name == "")
+		name = "NoName";
+
 	if (age < 0 || age > 100)
 		age = 0;
 
