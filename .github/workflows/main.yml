@@ -19,7 +19,8 @@ jobs:
       uses: ilammy/msvc-dev-cmd@v1.0.0
       # You can specify the architecture, e.g., 'x64' or 'x86'
       with:
-        arch: x64 
+        arch: x64
+        toolset: "14"
 
     - name: Build Solution
       # Use MSBuild to compile the entire solution, including the test projects
