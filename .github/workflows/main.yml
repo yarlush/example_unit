@@ -13,8 +13,6 @@ jobs:
 
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v2
-      with:
-        vs-version: '[17.0,)' # This finds the latest version that is 17.0 or newer.
 
     - name: Setup Visual Studio environment
       # This action sets up the necessary environment variables for MSVC build tools
