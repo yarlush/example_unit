@@ -11,6 +11,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.0
+
     - name: Setup Visual Studio environment
       # This action sets up the necessary environment variables for MSVC build tools
       uses: ilammy/msvc-dev-cmd@v1.0.0
