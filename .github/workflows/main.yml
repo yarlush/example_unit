@@ -18,7 +18,7 @@ jobs:
 
     - name: Setup Visual Studio environment
       # This action sets up the necessary environment variables for MSVC build tools
-      uses: ilammy/msvc-dev-cmd@v1.0.0
+      uses: ilammy/msvc-dev-cmd@v1.4.1
       # You can specify the architecture, e.g., 'x64' or 'x86'
       with:
         arch: x64
